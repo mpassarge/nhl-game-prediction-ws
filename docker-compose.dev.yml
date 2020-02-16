@@ -1,0 +1,26 @@
+version: '3'
+services: 
+  nhl-game-prediction-ws:
+    container_name: ngp-ws-dev
+    build: 
+      context: .
+      dockerfile: dev.Dockerfile 
+    networks:
+      - nhl-game-prediction-mongo
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./src:/usr/src/app/src
+    environment:
+      - NODE_ENV=dev
+      - DATABASE_URL=mongodb://nhl-game-prediction-ws-mongo:27017/predictions
+    depends_on: 
+      - nhl-game-prediction-ws-mongo
+  nhl-game-prediction-ws-mongo:
+    image: mongo:4.0
+    container_name: ngp-mongo-dev
+    networks:
+      - nhl-game-prediction-mongo
+networks: 
+  nhl-game-prediction-mongo:
+    driver: bridge

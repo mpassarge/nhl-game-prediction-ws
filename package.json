@@ -1,0 +1,18 @@
+{
+  "name": "nhl-game-prediction-ws",
+  "version": "1.0.0",
+  "description": "This will be the integration webservice for the backend server",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.8.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  }
+}
