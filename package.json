@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "This will be the integration webservice for the backend server",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "test": "mocha test/*.js --exit"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -12,7 +13,11 @@
     "mongoose": "^5.8.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "dotenv": "^8.2.0",
-    "nodemon": "^2.0.2"
+    "mocha": "^7.0.1",
+    "nodemon": "^2.0.2",
+    "testcontainers": "^2.4.0"
   }
 }
