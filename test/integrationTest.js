@@ -155,7 +155,6 @@ describe("NHL Game Prediction", function () {
                 .post('/api')
                 .send(slip)
                 .end((err, res) => {
-                    console.log(res.body)
                     res.should.have.status(400);
                     res.body.should.have.property('error');
                     done();
