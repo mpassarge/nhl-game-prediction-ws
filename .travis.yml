@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '13'
+
+branches:
+  only:
+    - master
+
+services:
+  - docker
+
+cache:
+  directories:
+      - ./node_modules
+
+install:
+  - npm install
+
+before_script:
+  - docker pull mongo:4.0
+
+script:
+  - npm run test
