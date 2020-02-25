@@ -1,8 +1,4 @@
-
-if(process.env.NODE_ENV === 'dev') {
-    const result = require('dotenv').config();
-}
-
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const routes = require('./routes/routes');
