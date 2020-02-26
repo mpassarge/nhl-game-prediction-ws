@@ -6,7 +6,7 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useUnifiedTopology', true);
 
-const dbUrl = process.env.DATABASE_URL;
+const dbUrl = process.env.DATABASE_URL | 'mongodb://localhost:27017/predictions';
 
 mongoose.connect(dbUrl);
 
