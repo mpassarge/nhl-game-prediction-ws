@@ -1,2 +1,8 @@
 .mongo
 node_modules/
+test/
+.git/
+scripts/
+*Dockerfile
+docker-compose*
+.travis.yml
