@@ -10,7 +10,7 @@
     "test": "mocha test/*.js --exit",
     "docker:build": "cross-conf-env docker build -t $npm_package_config_repository:$npm_package_version .",
     "docker:tag": "cross-conf-env docker tag $npm_package_config_repository:$npm_package_version $npm_package_config_repository:latest",
-    "predocker:push":"./scripts/docker-version-validation.sh $npm_package_config_repository $npm_package_version",
+    "predocker:push":"cross-conf-env ./scripts/docker-version-validation.sh $npm_package_config_repository $npm_package_version",
     "docker:push": "cross-conf-env docker push $npm_package_config_repository:$npm_package_version",
     "postdocker:push":"cross-conf-env docker push $npm_package_config_repository:latest"
   },
