@@ -2,9 +2,17 @@
   "name": "nhl-game-prediction-ws",
   "version": "1.0.0",
   "description": "This will be the integration webservice for the backend server",
+  "config": {
+    "repository": "mpassarge/nhl-game-prediction-ws"
+  },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "test": "mocha test/*.js --exit"
+    "test": "mocha test/*.js --exit",
+    "docker:build": "cross-conf-env docker build -t $npm_package_config_repository:$npm_package_version .",
+    "docker:tag": "cross-conf-env docker tag $npm_package_config_repository:$npm_package_version $npm_package_config_repository:latest",
+    "predocker:push":"./scripts/docker-version-validation.sh $npm_package_config_repository $npm_package_version",
+    "docker:push": "cross-conf-env docker push $npm_package_config_repository:$npm_package_version",
+    "postdocker:push":"cross-conf-env docker push $npm_package_config_repository:latest"
   },
   "dependencies": {
     "bluebird": "^3.7.2",
@@ -15,7 +23,7 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "dotenv": "^8.2.0",
+    "cross-conf-env": "^1.1.2",
     "mocha": "^7.0.1",
     "nodemon": "^2.0.2",
     "testcontainers": "^2.4.0"
