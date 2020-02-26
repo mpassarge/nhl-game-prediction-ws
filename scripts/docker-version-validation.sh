@@ -1,7 +1,9 @@
 #!/usr/bin/bash
 
-repository=$0
-version=$1
+repository=$1
+version=$2
+
+
 
 echo $version
 http_code=$(curl --silent -L -o /dev/null -I --write-out %{http_code} https://hub.docker.com/v2/repositories/$repository/tags/$version)
