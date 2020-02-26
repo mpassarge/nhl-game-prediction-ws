@@ -21,10 +21,10 @@ before_script:
 
 script:
   - npm run test
-
-after_script:
   - npm run docker:build
   - npm run docker:tag
   - docker login --username $DOCKER_USERNAME --password $DOCKER_TOKEN
   - npm run docker:push
+
+after_script:
   - docker logout
