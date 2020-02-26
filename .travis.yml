@@ -25,6 +25,6 @@ script:
 after_script:
   - npm run docker:build
   - npm run docker:tag
-  - docker login --user $DOCKER_USERNAME --password $DOCKER_TOKEN
+  - docker login --username $DOCKER_USERNAME --password $DOCKER_TOKEN
   - npm run docker:push
   - docker logout
