@@ -1,11 +1,11 @@
 [Unit]
-Description=Webservice backend for prediction database
+Description=Webservice backend for prediction mongodb database
 
 [Service]
 Type=simple
-User=pi
-WorkingDirectory=/app/ws
-ExecStart=/usr/bin/node src/server.js
+User=ubuntu
+WorkingDirectory=/home/ubuntu/app/ws
+ExecStart=/home/ubuntu/.nvm/versions/node/v13.9.0/bin/node src/server.js
 Restart=on-failure
 Environment=DATABASE_URL=mongodb://localhost:27017
 
